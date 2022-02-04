@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
-    <title>Document</title>
+    <title>Boolpress</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
             </ul> 
         </div> 
     @endif 
-    
+
     @yield('content')
 
     @include('components.footer')
