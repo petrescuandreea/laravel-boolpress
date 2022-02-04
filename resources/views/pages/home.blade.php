@@ -4,10 +4,35 @@
     <section class="content">
 
         @auth
+            {{-- content for authenticated users  --}}
             <h1>{{ Auth::user() -> name }}</h1>
+
             <a class="btn btn-prinary" href="{{ route('logout') }}">LOGOUT</a>
+
+            <section class="posts-container">
+
+                @foreach ($posts as $post)
+                    <a href="">
+                        <div>
+                            <h2>
+                                {{ $post -> title }}
+                            </h2>
+                            <h3>
+                                {{ $post -> subTitle ?? '-' }}
+                            </h3>
+                            <span>
+                                ( {{ $post -> authorName }} - {{ $post -> postDate }})
+                            </span>
+                        </div>
+                    </a>
+                    <br>
+                    <br>
+                @endforeach
+    
+            </section>
         @else
-            <h1>You have to login or register to go on</h1>
+            {{-- content for guest users  --}}
+            <h1>You have to login or register to see our posts!</h1>
         @endauth
 
         @guest
