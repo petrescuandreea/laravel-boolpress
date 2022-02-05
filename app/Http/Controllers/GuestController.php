@@ -12,10 +12,17 @@ class GuestController extends Controller
         return view('pages.home');
     }
 
+    // show all posts 
     public function posts() {
 
         $posts = Post::all();
 
         return view('pages.home', compact('posts'));
+    }
+
+    // create new post 
+    public function create() {
+
+        return view('pages.create');
     }
 }
