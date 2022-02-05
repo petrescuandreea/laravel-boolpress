@@ -7,8 +7,9 @@
             {{-- content for authenticated users  --}}
             <h1>{{ Auth::user() -> name }}</h1>
 
-            <a class="btn btn-primary" href="{{ route('logout') }}" role="button">LOGOUT</a>
+            <a class="btn btn-primary m-4" href="{{ route('logout') }}" role="button">LOGOUT</a>
 
+            <a class="btn btn-secondary m-4" href="{{ route('create') }}" role="button">NEW POST</a>
 
             <section class="posts-container">
 
