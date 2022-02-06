@@ -3,32 +3,44 @@
     <main>
         @auth
             {{-- content for authenticated users  --}}
-            <h1 class=" text-center text-capitalize">Hi {{ Auth::user() -> name }} !</h1>
+            <h1 class="text-center text-capitalize mb-4">Hi {{ Auth::user() -> name }} !</h1>
 
-            <a class="btn btn-primary m-4" href="{{ route('logout') }}" role="button">LOGOUT</a>
+            <div class="d-flex justify-content-between" >
+                <div>
+                    <h3 class="pl-3">
+                        Here you can find our posts. If you want to create one don't hesitate, we will be happy to read it!
+                    </h3>
+                </div>
 
-            <a class="btn btn-secondary m-4" href="{{ route('create') }}" role="button">NEW POST</a>
+                <div>
+                    <a class="btn btn-secondary mr-2" href="{{ route('create') }}" role="button">NEW POST</a>
+                    <a class="btn btn-primary mr-1" href="{{ route('logout') }}" role="button">LOGOUT</a>
+                </div>
+            </div>
 
-            <section class="posts-container">
+            <section class="d-flex flex-wrap justify-content-around py-5 text-info">
 
                 @foreach ($posts as $post)
-                    <a href="">
-                        <div>
-                            <h2>
-                                {{ $post -> title }}
-                            </h2>
-                            <h3>
-                                {{ $post -> subTitle ?? '-' }}
-                            </h3>
-                            <span>
-                                ( {{ $post -> authorName }} - {{ $post -> postDate }})
+                <div class="mb-5 py-5 border rounded border-top-0 text-center" style="width:calc(90% / 3);">
+                    <a href="" class="text-decoration-none">
+                        <h2 >
+                            {{ $post -> title }}
+                        </h2>
+                        <h3>
+                            {{ $post -> subTitle ?? '-' }}
+                        </h3>
+                        <span>
+                            ( {{ $post -> authorName }} - {{ $post -> postDate }})
+                        </span>
+
+                        <div class="pt-3">
+                            <span class="d-block">
+                                Clik to read more ...
                             </span>
                         </div>
                     </a>
-                    <br>
-                    <br>
+                </div>
                 @endforeach
-    
             </section>
         @else
             {{-- content for guest users  --}}
