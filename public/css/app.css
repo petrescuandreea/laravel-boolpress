@@ -10962,19 +10962,3 @@ a.text-dark:focus {
   }
 }
 
-header {
-  height: 100px;
-  padding-left: 20px;
-}
-
-header img {
-  line-height: 100px;
-}
-
-header h1 {
-  line-height: 100px;
-  display: inline;
-  vertical-align: middle;
-  margin-left: 10px;
-}
-
