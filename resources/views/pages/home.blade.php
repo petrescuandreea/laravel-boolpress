@@ -60,39 +60,39 @@
                         @csrf
                         
                         <div class="form-group">
-                            <label for="name" class="col-md-4 col-form-label text-dark">Name</label>
+                            <label for="name" class="col-lg-4 col-form-label text-dark">Name</label>
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input type="text" name="name" placeholder="Your Name">
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email" class="col-md-6 col-form-label text-dark">E-mail</label>
+                            <label for="email" class="col-lg-6 col-form-label text-dark">E-mail</label>
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input type="email" name="email" placeholder="Your Email"> 
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="password" class="col-md-4 col-form-label text-dark">Password</label>
+                            <label for="password" class="col-lg-4 col-form-label text-dark">Password</label>
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input type="password" name="password" placeholder="Password"> 
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-9 col-form-label text-dark">Confirm password</label>
+                            <label for="password-confirm" class="col-lg-9 col-form-label text-dark">Confirm password</label>
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input type="password" name="password_confirmation" placeholder="Repeat your password">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0 pt-2">
-                            <div class="col-md-6 offset-md-2">
+                            <div class="col-lg-6 offset-lg-2">
                                 <input type="submit" class="btn btn-primary btn-lg" value="REGISTER">
                             </div>
                         </div>
@@ -109,23 +109,23 @@
                         @csrf
             
                         <div class="form-group">
-                            <label for="email" class="col-md-6 col-form-label text-dark">E-mail</label>
+                            <label for="email" class="col-lg-6 col-form-label text-dark">E-mail</label>
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input type="email" name="email" placeholder="Your Email"> 
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="password" class="col-md-4 col-form-label text-dark">Password</label>
+                            <label for="password" class="col-lg-4 col-form-label text-dark">Password</label>
 
-                            <div class="col-md-6">
+                            <div class="col-lg-6">
                                 <input type="password" name="password" placeholder="Password"> 
                             </div>
                         </div>
 
                         <div class="form-group row mb-0 pt-2">
-                            <div class="col-md-6 offset-md-3">
+                            <div class="col-lg-6 offset-lg-3">
                                 <input type="submit" class="btn btn-primary btn-lg" value="LOGIN">
                             </div>
                         </div>
