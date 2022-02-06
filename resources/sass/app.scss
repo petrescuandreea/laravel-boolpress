@@ -6,3 +6,21 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+header{
+    height: 100px;
+    padding-left: 20px;
+
+    img {
+        line-height: 100px;
+    }
+
+    h1 {
+        line-height: 100px;
+        display: inline;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    
+}
