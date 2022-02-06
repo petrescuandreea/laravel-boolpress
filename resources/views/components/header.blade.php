@@ -1,5 +1,4 @@
 <header>
-    <h1>
-        Welcome!
-    </h1>
+    <img src="{{ asset('/storage/assets/logo copia.png') }}" alt="boolpress logo"> 
+    <h1>Boolpress</h1>
 </header>
