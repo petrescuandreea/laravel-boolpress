@@ -10,21 +10,23 @@
 </head>
 <body>
 
-    @include('components.header')
+    <div class="bg-dark text-white">
+        @include('components.header')
 
-    @if ($errors->any()) 
-        <div class="alert alert-danger"> 
-            <ul> 
-                @foreach ($errors->all() as $error) 
-                    <li>{{ $error }}</li> 
-                @endforeach 
-            </ul> 
-        </div> 
-    @endif 
+        @if ($errors->any()) 
+            <div class="alert alert-danger"> 
+                <ul> 
+                    @foreach ($errors->all() as $error) 
+                        <li>{{ $error }}</li> 
+                    @endforeach 
+                </ul> 
+            </div> 
+        @endif 
 
-    @yield('content')
+        @yield('content')
 
-    @include('components.footer')
+        @include('components.footer')
+    </div>
     
 </body>
 </html>
