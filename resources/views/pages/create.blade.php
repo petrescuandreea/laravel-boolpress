@@ -34,6 +34,14 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="postDate" class="col-form-label text-light">Post Date</label>
+    
+                <div>
+                    <input type="date" name="postDate">
+                </div>
+            </div>
+
             <div class="form-group row mb-0 pt-2">
                 <div class="col-lg-2 offset-lg-5">
                     <input type="submit" class="btn btn-primary btn-lg" value="Save new post">
