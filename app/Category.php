@@ -11,4 +11,10 @@ class Category extends Model
         'name',
         'description',
     ];
+
+    public function posts() {
+
+        // ad ogni categoria può appartenere più post 
+        return $this -> hasMany(Post::class);
+    }
 }
