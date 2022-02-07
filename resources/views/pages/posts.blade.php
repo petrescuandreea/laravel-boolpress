@@ -30,7 +30,7 @@
                             {{ $post -> subTitle ?? '-' }}
                         </h3>
                         <span>
-                            ( {{ $post -> authorName }} - {{ $post -> created_at }})
+                            ( {{ $post -> authorName }} - {{ $post -> postDate }})
                         </span>
 
                         <div class="pt-3">
