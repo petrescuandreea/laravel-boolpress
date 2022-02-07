@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 use App\Post;
 
 class GuestController extends Controller
@@ -17,7 +16,7 @@ class GuestController extends Controller
     // show all posts 
     public function posts() {
 
-        $posts = Post::orderBy('created_at', 'desc') -> get();
+        $posts = Post::all();
 
         return view('pages.home', compact('posts'));
     }
@@ -36,6 +35,7 @@ class GuestController extends Controller
             'title' => 'required|string|max:255',
             'subTitle' => 'nullable|string|max:255',
             'postText' => 'required|string|max:15000',
+            'postDate' => 'required|date',
         ]);
 
         $data['authorName'] = Auth::user() -> name;
