@@ -24,14 +24,18 @@
                 <div class="mb-5 py-5 border rounded border-top-0 text-center" style="width:calc(90% / 3);">
                     <a href="" class="text-decoration-none">
                         <h2 >
-                            {{ $post -> title }}
+                            Title: {{ $post -> title }}
                         </h2>
                         <h3>
-                            {{ $post -> subTitle ?? '-' }}
+                            Subtitle: {{ $post -> subTitle ?? 'No subtitle' }}
                         </h3>
                         <span>
-                            ( {{ $post -> authorName }} - {{ $post -> postDate }})
+                            Written by:( {{ $post -> authorName }} - {{ $post -> postDate }})
                         </span>
+
+                        <p>Category: {{ $post -> category -> name }}</p>
+                        <p>Descriprion: {{ $post -> category -> description }}</p>
+
 
                         <div class="pt-3">
                             <span class="d-block">
