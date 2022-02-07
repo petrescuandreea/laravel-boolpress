@@ -8,12 +8,8 @@ class Post extends Model
 {
     protected $fillable = [
 
-        'authorName',
-        'authorPhoto',
-        'postDate',
         'title',
         'subTitle',
         'postText',
-        'postImage',
     ];
 }
