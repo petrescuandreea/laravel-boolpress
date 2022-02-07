@@ -14,4 +14,10 @@ class Post extends Model
         'subTitle',
         'postText',
     ];
+
+    public function category() {
+
+        // ad ogni post è collegata una sola categoria 
+        return $this -> belongsTo(Category::class);
+    }
 }
