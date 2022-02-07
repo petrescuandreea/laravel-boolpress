@@ -38,7 +38,7 @@ class GuestController extends Controller
             'postText' => 'required|string|max:15000',
         ]);
 
-        $data['Author'] = Auth::user() ->name;
+        $data['authorName'] = Auth::user() -> name;
         // create new post 
         $post = Post::create($data);
 
