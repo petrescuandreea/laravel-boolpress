@@ -23,6 +23,9 @@ class CreatePostsTable extends Migration
             $table -> string('subTitle') -> nullable();
             $table -> text('postText');
 
+
+            $table -> bigInteger('category_id') -> unsigned();
+
             $table -> timestamps();
         });
     }
