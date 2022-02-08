@@ -32,6 +32,12 @@
 
                     <p>Category: {{ $post -> category -> name }}</p>
                     <p>Descriprion: {{ $post -> category -> description }}</p>
+                    <div>
+                        <span>Tags:</span>
+                        @foreach ($post -> tags as $tag)
+                            {{ $tag -> name }} <br>
+                        @endforeach
+                    </div>
 
 
                     <div class="pt-3">
