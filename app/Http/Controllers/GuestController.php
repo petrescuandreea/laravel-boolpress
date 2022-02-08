@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
+use App\Category;
 
 class GuestController extends Controller
 {
     public function home() {
 
-        return view('pages.index');
+        return view('pages.home');
     }
 
     // show all posts 
@@ -18,13 +19,14 @@ class GuestController extends Controller
 
         $posts = Post::all();
 
-        return view('pages.home', compact('posts'));
+        return view('pages.posts', compact('posts'));
     }
 
     // create new post 
     public function create() {
 
-        return view('pages.create');
+        $categories = Category::all();
+        return view('pages.create', compact('categories'));
     }
 
     public function store(Request $request) {
@@ -38,9 +40,16 @@ class GuestController extends Controller
             'postDate' => 'required|date',
         ]);
 
-        $data['authorName'] = Auth::user() -> name;
+        $datas['authorName'] = Auth::user() -> name;
+
+        $category = Category::findOrFail($request -> get('category_id'));
+
         // create new post 
-        $post = Post::create($data);
+        $post = Post::make($data);
+
+        $post -> category() -> associate($category);
+
+        $post -> save();
 
         // insert new element in posts 
         return redirect() -> route('posts');
