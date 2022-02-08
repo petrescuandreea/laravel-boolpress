@@ -27,7 +27,7 @@
                         Subtitle: {{ $post -> subTitle ?? 'No subtitle' }}
                     </h3>
                     <span>
-                        Written by: {{ $post -> authorName }} on  {{ $post -> postDate }} 
+                        Written by: {{ $post -> authorName }} on  {{ $post -> created_at }} 
                     </span>
 
                     <p>Category: {{ $post -> category -> name }}</p>

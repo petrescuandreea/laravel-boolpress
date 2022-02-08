@@ -18,7 +18,6 @@ class CreatePostsTable extends Migration
             $table -> id();
 
             $table -> string('authorName');
-            $table -> date('postDate');
             $table -> string('title');
             $table -> string('subTitle') -> nullable();
             $table -> text('postText');

@@ -35,14 +35,6 @@
             </div>
 
             <div class="form-group">
-                <label for="postDate" class="col-form-label text-light">Post Date</label>
-    
-                <div>
-                    <input type="date" name="postDate">
-                </div>
-            </div>
-
-            <div class="form-group">
                 <label for="category" class="col-form-label text-light">Category</label>
     
                 <select name="category">
@@ -52,10 +44,12 @@
                 </select>
             </div>
 
-            <h4>Tags</h4>
-            @foreach ($tags as $tag)
-                <input type="checkbox" name="tags[]" value="{{ $tag -> id }}"> {{ $tag -> name }} <br>
-            @endforeach
+            <div class="form-group">
+                <h4>Tags</h4>
+                @foreach ($tags as $tag)
+                    <input type="checkbox" name="tags[]" value="{{ $tag -> id }}"> {{ $tag -> name }} <br>
+                @endforeach
+            </div>
 
             <div class="form-group row mb-0 pt-2">
                 <div class="col-lg-2 offset-lg-5">
