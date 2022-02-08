@@ -26,6 +26,7 @@ class GuestController extends Controller
     public function create() {
 
         $categories = Category::all();
+        // dd($categories);
         return view('pages.create', compact('categories'));
     }
 
@@ -40,18 +41,18 @@ class GuestController extends Controller
             'postDate' => 'required|date',
         ]);
 
-        $datas['authorName'] = Auth::user() -> name;
-
-        $category = Category::findOrFail($request -> get('category_id'));
+        $data['authorName'] = Auth::user() -> name;
 
         // create new post 
         $post = Post::make($data);
 
-        $post -> category() -> associate($category);
+        // category validation
+        $category = Category::findOrFail($request -> get('category'));
 
+        $post -> category() -> associate($category);
+        // insert new element in posts 
         $post -> save();
 
-        // insert new element in posts 
         return redirect() -> route('posts');
     }
 }
