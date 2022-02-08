@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 @section('content')
-    <section class="my-0 mx-auto text-center" style="width:75%; height:calc(100vh - 180px);">
+    <section class="my-0 mx-auto text-center" style="width:75%; min-height:calc(100vh - 180px);">
         <h1>
             Create new post
         </h1>
@@ -51,6 +51,11 @@
                     @endforeach
                 </select>
             </div>
+
+            <h4>Tags</h4>
+            @foreach ($tags as $tag)
+                <input type="checkbox" name="tags[]" value="{{ $tag -> id }}"> {{ $tag -> name }} <br>
+            @endforeach
 
             <div class="form-group row mb-0 pt-2">
                 <div class="col-lg-2 offset-lg-5">
