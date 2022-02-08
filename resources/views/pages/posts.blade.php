@@ -16,10 +16,10 @@
             </div>
         </div>
 
-        <section class="d-flex flex-wrap justify-content-around py-5 text-info">
+        <section class="d-flex flex-wrap justify-content-around p-5 text-info">
             @foreach ($posts as $post)
-            <div class="mb-5 py-5 border rounded border-top-0 text-center" style="width:calc(90% / 3);">
-                <a href="" class="text-decoration-none">
+            <div class="mb-5 p-5 border rounded text-center bg-white" style="width:calc(90% / 3);">
+                <a href="" class="text-decoration-none text-dark">
                     <h2 >
                         Title: {{ $post -> title }}
                     </h2>
@@ -27,13 +27,13 @@
                         Subtitle: {{ $post -> subTitle ?? 'No subtitle' }}
                     </h3>
                     <span>
-                        Written by:( {{ $post -> authorName }} - {{ $post -> postDate }})
+                        Written by: {{ $post -> authorName }} on  {{ $post -> postDate }} 
                     </span>
 
                     <p>Category: {{ $post -> category -> name }}</p>
                     <p>Descriprion: {{ $post -> category -> description }}</p>
                     <div>
-                        <span>Tags:</span>
+                        <span>Tags:</span> <br>
                         @foreach ($post -> tags as $tag)
                             {{ $tag -> name }} <br>
                         @endforeach
