@@ -42,6 +42,16 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="category" class="col-form-label text-light">Category</label>
+    
+                <select name="category">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category -> id }}">{{ $category -> name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <div class="form-group row mb-0 pt-2">
                 <div class="col-lg-2 offset-lg-5">
                     <input type="submit" class="btn btn-primary btn-lg" value="Save new post">
