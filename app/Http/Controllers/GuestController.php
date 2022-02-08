@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Category;
+use App\Tag;
 
 class GuestController extends Controller
 {
@@ -27,7 +28,9 @@ class GuestController extends Controller
 
         $categories = Category::all();
         // dd($categories);
-        return view('pages.create', compact('categories'));
+        $tags = Tag::all();
+
+        return view('pages.create', compact('categories'), compact('tags'));
     }
 
     public function store(Request $request) {
@@ -48,11 +51,17 @@ class GuestController extends Controller
 
         // category validation
         $category = Category::findOrFail($request -> get('category'));
-
         $post -> category() -> associate($category);
         // insert new element in posts 
         $post -> save();
 
+
+        // tags validation 
+        $tags = Tag::findOrFail($request -> get('tags'));
+        // dd($tags);
+        $post -> tags() -> attach($tags);
+        $post -> save();
+        
         return redirect() -> route('posts');
     }
 }
