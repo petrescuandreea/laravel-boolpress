@@ -13,6 +13,7 @@ class Post extends Model
         'title',
         'subTitle',
         'postText',
+        'category_id',
     ];
 
     public function category() {
