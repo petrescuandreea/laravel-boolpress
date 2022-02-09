@@ -73,4 +73,35 @@ class GuestController extends Controller
 
         return view('pages.edit', compact('categories', 'tags', 'post'));
     }
+
+    public function update(Request $request, $id) {
+
+        // validation 
+        $data = $request -> validate([
+
+            'title' => 'required|string|max:255',
+            'subTitle' => 'nullable|string|max:255',
+            'postText' => 'required|string|max:15000',
+        ]);
+
+        $data['authorName'] = Auth::user() -> name;
+
+        // find post to update 
+        $post = Post::findOrFail($id);
+
+        // update post 
+        $post -> update($data);
+
+        // update category 
+        $category = Category::findOrFail($request -> get('category'));
+        $post -> category() -> associate($category);
+        $post -> save();
+
+        // update tags 
+        $tags = Tag::findOrFail($request -> get('tags'));
+        $post -> tags() -> sync($tags);
+        $post -> save();
+
+        return redirect('/posts');
+    }
 }
