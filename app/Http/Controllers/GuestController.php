@@ -56,8 +56,11 @@ class GuestController extends Controller
 
 
         // tags validation 
-        $tags = Tag::findOrFail($request -> get('tags'));
-        // dd($tags);
+        $tags = [];
+        try {
+            $tags = Tag::findOrFail($request -> get('tags'));
+        } catch (\Exception $e) {}
+        
         $post -> tags() -> attach($tags);
         $post -> save();
 
@@ -98,10 +101,14 @@ class GuestController extends Controller
         $post -> save();
 
         // update tags 
-        $tags = Tag::findOrFail($request -> get('tags'));
+        $tags = [];
+        try {
+            $tags = Tag::findOrFail($request -> get('tags'));
+        } catch (\Exception $e) {}
+        
         $post -> tags() -> sync($tags);
         $post -> save();
 
-        return redirect('/posts');
+        return redirect() -> route('posts');
     }
 }
