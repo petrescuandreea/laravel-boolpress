@@ -111,4 +111,18 @@ class GuestController extends Controller
 
         return redirect() -> route('posts');
     }
+
+    public function delete($id) {
+
+        // find post to delete 
+        $post = Post::findOrFail($id);
+
+        // delete relationship in pivot table 
+        $post -> tags() -> sync([]);
+        $post -> save();
+
+        $post -> delete($post);
+
+        return redirect() -> route('posts');
+    }
 }
