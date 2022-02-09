@@ -30,7 +30,7 @@ class GuestController extends Controller
         // dd($categories);
         $tags = Tag::all();
 
-        return view('pages.create', compact('categories'), compact('tags'));
+        return view('pages.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request) {
@@ -62,5 +62,15 @@ class GuestController extends Controller
         $post -> save();
 
         return redirect() -> route('posts');
+    }
+
+    public function edit($id) {
+
+        $categories = Category::all();
+        $tags = Tag::all();
+        // dd($id);
+        $post = Post::findOrFail($id);
+
+        return view('pages.edit', compact('categories', 'tags', 'post'));
     }
 }
