@@ -45,6 +45,10 @@
                             Clik to read more ...
                         </span>
                     </div>
+
+                    <div>
+                        <a class="btn btn-secondary" href="{{ route('edit', $post -> id) }}">EDIT</a>
+                    </div>
                 </a>
             </div>
             @endforeach
