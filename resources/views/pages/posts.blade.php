@@ -18,38 +18,30 @@
 
         <section class="d-flex flex-wrap justify-content-around p-5 text-info">
             @foreach ($posts as $post)
-            <div class="mb-5 p-5 border rounded text-center bg-white" style="width:calc(90% / 3);">
-                <a href="" class="text-decoration-none text-dark">
-                    <h2 >
-                        Title: {{ $post -> title }}
-                    </h2>
-                    <h3>
-                        Subtitle: {{ $post -> subTitle ?? 'No subtitle' }}
-                    </h3>
-                    <span>
-                        Written by: {{ $post -> authorName }} on  {{ $post -> created_at }} 
-                    </span>
+            <div class="mb-5 p-5 border rounded text-center text-dark bg-white" style="width:calc(90% / 3);">
+                <h2 >
+                    Title: {{ $post -> title }}
+                </h2>
+                <h3>
+                    Subtitle: {{ $post -> subTitle ?? 'No subtitle' }}
+                </h3>
+                <span>
+                    Written by: {{ $post -> authorName }} on  {{ $post -> created_at }} 
+                </span>
 
-                    <p>Category: {{ $post -> category -> name }}</p>
-                    <p>Descriprion: {{ $post -> category -> description }}</p>
-                    <div>
-                        <span>Tags:</span> <br>
-                        @foreach ($post -> tags as $tag)
-                            {{ $tag -> name }} <br>
-                        @endforeach
-                    </div>
+                <p>Category: {{ $post -> category -> name }}</p>
+                <p>Descriprion: {{ $post -> category -> description }}</p>
+                <div>
+                    <span>Tags:</span> <br>
+                    @foreach ($post -> tags as $tag)
+                        {{ $tag -> name }} <br>
+                    @endforeach
+                </div>
 
-
-                    <div class="pt-3">
-                        <span class="d-block">
-                            Clik to read more ...
-                        </span>
-                    </div>
-
-                    <div>
-                        <a class="btn btn-secondary" href="{{ route('edit', $post -> id) }}">EDIT</a>
-                    </div>
-                </a>
+                <div class="text-center pt-2">
+                    <a class="btn btn-secondary mr-3" href="{{ route('edit', $post -> id) }}">EDIT</a>
+                    <a class="btn btn-danger" href="{{ route('delete', $post -> id) }}">DELETE</a>
+                </div>
             </div>
             @endforeach
         </section>
